@@ -39,7 +39,8 @@
                 BRO WHAT UP?
             </div>
             <div style="margin:20px" onclick="record_video()">Record</div>
-            <div onclick="play_video()">Play_back</div>
+            <div style="margin:20px" onclick="play_video()">Play_back</div>
+            <div style="margin:20px" onclick="choose_video()">Choose Video</div>
             <video id="video" width="400" controls>
               <source id="source" src='' type="video/mp4">    
             </video>
@@ -76,14 +77,28 @@
             var play_video = function(){
                 alert('work?')
                 var video = document.getElementById('video');
-                video.setAttribute("src", video_path);
-
-                
+                video.setAttribute("src", video_path);         
                 // var source = document.getElementById('source');
                 // source.setAttribute("src", video_path);
             }
-            
-            console.log(2);
+
+            var choose_video = function(){
+                navigator.camera.getPicture(
+                    function(resp){
+                        alert('worked!')
+                        alert(JSON.stringify(resp))
+                    }, 
+                    function(resp){
+                        alert('failed :(')
+                        alert(JSON.stringify(resp))
+                    },
+                    {
+                        quality: 50, 
+                        destinationType: destinationType.FILE_URI, 
+                        sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+                    }
+                );
+            }
         </script>
     </body>
 </html>
