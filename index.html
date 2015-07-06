@@ -82,20 +82,35 @@
                 // source.setAttribute("src", video_path);
             }
 
+            // var choose_video = function(){
+            //     navigator.camera.getPicture(
+            //         function(resp){
+            //             alert('worked!')
+            //             alert(JSON.stringify(resp))
+            //         }, 
+            //         function(resp){
+            //             alert('failed :(')
+            //             alert(JSON.stringify(resp))
+            //         },
+            //         {
+            //             quality: 50, 
+            //             destinationType: Camera.DestinationType.FILE_URI, 
+            //             sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+            //         }
+            //     );
+            // }
+
             var choose_video = function(){
-                navigator.camera.getPicture(
-                    function(resp){
-                        alert('worked!')
-                        alert(JSON.stringify(resp))
-                    }, 
-                    function(resp){
-                        alert('failed :(')
-                        alert(JSON.stringify(resp))
-                    },
-                    {
-                        quality: 50, 
-                        destinationType: destinationType.FILE_URI, 
-                        sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+                window.imagePicker.getPictures(
+                    function(results) {
+                        for (var i = 0; i < results.length; i++) {
+                            console.log('Image URI: ' + results[i]);
+                        }
+                    }, function (error) {
+                        console.log('Error: ' + error);
+                    }, {
+                        maximumImagesCount: 10,
+                        width: 800
                     }
                 );
             }
