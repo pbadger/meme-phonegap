@@ -40,8 +40,8 @@
             </div>
             <div style="margin:20px" onclick="record_video()">Record</div>
             <div onclick="play_video()">Play_back</div>
-            <video width="400" controls>
-              <source src='file:/storage/extSdCard/DCIM/Camera/20150706_111203.mp4' type="video/mp4">
+            <video id="video" width="400" controls>
+              <source id="source" src='' type="video/mp4">    
             </video>
         </div>
         
@@ -74,8 +74,13 @@
             }
 
             var play_video = function(){
-                alert('working')
-                try{cordova.plugins.bridge.open(video_path);} catch(e){alert(JSON.stringify(e))}
+                alert('work?')
+                var video = document.getElementById('video');
+                video.setAttribute("src", video_path);
+
+                
+                // var source = document.getElementById('source');
+                // source.setAttribute("src", video_path);
             }
             
             console.log(2);
