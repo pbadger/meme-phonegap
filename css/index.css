@@ -51,8 +51,8 @@ body {
     position:absolute;             /* position in the center of the screen */
     left:50%;
     top:50%;
-    height:100px;                   /* text area height */
-    width:450px;                   /* text area width */
+    height:700px;                   /* text area height */
+    width:700px;                   /* text area width */
     text-align:center;
     padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
