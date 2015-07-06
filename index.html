@@ -40,6 +40,9 @@
             </div>
             <div style="margin:20px" onclick="record_video()">Record</div>
             <div onclick="play_video()">Play_back</div>
+            <video width="400" controls>
+              <source src='file:/storage/extSdCard/DCIM/Camera/20150706_111203.mp4' type="video/mp4">
+            </video>
         </div>
         
         <script type="text/javascript" src="cordova.js"></script>
@@ -56,6 +59,7 @@
                         function(resp){
                             alert('work')
                             video_path = resp[0]['fullPath']
+                            console.log(video_path)
                             alert(JSON.stringify(resp))
                         },
                         function(e){
