@@ -34,7 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        console.log('this! ->> ', nfc)
+        alert(JSON.stringify(nfc))
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
