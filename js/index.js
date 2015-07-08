@@ -34,7 +34,20 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        alert(JSON.stringify(nfc))
+    },
+    onNfc: function(nfcEvent) {
+        var tag = nfcEvent.tag,
+            ndefMessage = tag.ndefMessage;
+
+        // dump the raw json of the message
+        // note: real code will need to decode
+        // the payload from each record
+        alert(JSON.stringify(ndefMessage));
+        
+        // show the payload of the first record as a string
+        // might produce junk depending on the record type
+        alert(nfc.bytesToString(ndefMessage[0].payload).substring(1));
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
