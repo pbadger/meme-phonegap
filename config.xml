@@ -18,7 +18,7 @@
   <preference name="disable-cursor" value="false"/>
   <preference name="android-minSdkVersion" value="7"/>
   <preference name="android-installLocation" value="auto"/>
-  <gap:plugin name="com.phonegap.plugin.statusbar"/>
+  <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
   <gap:plugin name="com.photokandy.videothumbnail"/>
   <gap:plugin name="org.apache.cordova.battery-status"/>
   <gap:plugin name="org.apache.cordova.camera"/>
